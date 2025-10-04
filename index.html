@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Carlos Márquez — Desarrollador Full‑Stack</title>
+  <meta name="description" content="Portafolio ligero en HTML + Tailwind 3. APIs robustas, frontends veloces y despliegues confiables." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230ea5e9'/%3E%3Ctext x='50' y='60' text-anchor='middle' font-size='56' fill='white'%3EC%3C/text%3E%3C/svg%3E" />
+
+  <!-- Tailwind 3 Play CDN (ligero de usar; para producción se recomienda compilar) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { display: ['Inter', 'ui-sans-serif', 'system-ui'] },
+          boxShadow: {
+            soft: '0 10px 20px -10px rgba(2, 132, 199, 0.25)'
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Fuente Inter opcional (sólo 1 peso) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- JSON‑LD básico para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Carlos Márquez",
+    "jobTitle": "Full-Stack Developer",
+    "url": "https://azulunbit.com/",
+    "sameAs": ["https://github.com/tu-github","https://www.linkedin.com/in/tu-perfil"]
+  }
+  </script>
+</head>
+<body class="bg-white text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-display">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-slate-950/60 border-b border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center gap-4">
+      <a href="#" class="flex items-center gap-2 font-bold tracking-tight text-slate-900 dark:text-white">
+        <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-sky-500 text-white shadow-soft">CM</span>
+        <span>Carlos Márquez</span>
+      </a>
+      <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
+        <a href="#inicio" class="hover:text-sky-600">Inicio</a>
+        <a href="#proyectos" class="hover:text-sky-600">Proyectos</a>
+        <a href="#servicios" class="hover:text-sky-600">Servicios</a>
+        <a href="#blog" class="hover:text-sky-600">Blog</a>
+        <a href="#contacto" class="hover:text-sky-600">Contacto</a>
+        <button id="themeToggle" class="ml-2 inline-flex h-9 w-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-900" aria-label="Cambiar tema">
+          <svg id="sun" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.5 6.5-1.5-1.5M8 8 6.5 6.5m11 0L16.5 8M8 16.5 6.5 18"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+      <div class="reveal">
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          Desarrollador <span class="text-sky-600">Full‑Stack</span> (Node.js + TS)
+        </h1>
+        <p class="mt-4 text-lg text-slate-600 dark:text-slate-300">
+          Construyo APIs robustas, frontends veloces y despliegues confiables en Linux/Nginx. Enfocado en rendimiento, seguridad y mantenibilidad.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#proyectos" class="d inline-flex items-center gap-2 rounded-2xl bg-sky-600 text-white px-5 py-3 font-semibold">
+            Ver proyectos
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#contacto" class="d inline-flex items-center gap-2 rounded-2xl border border-slate-300 dark:border-slate-700 px-5 py-3 font-semibold">
+            Contáctame
+          </a>
+        </div>
+        <div class="mt-6 flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+          <span class="inline-flex items-center gap-1"><span class="h-2.5 w-2.5 rounded-full bg-emerald-500"></span> Disponible para proyectos</span>
+          <a class="hover:text-sky-600" href="https://github.com/tu-github" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="hover:text-sky-600" href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="relative aspect-[4/3] rounded-3xl bg-gradient-to-br from-sky-100 to-sky-50 dark:from-slate-900 dark:to-slate-800 p-2 shadow-soft">
+          <div class="h-full w-full rounded-2xl bg-white/70 dark:bg-slate-900/60 grid place-items-center">
+            <div class="text-center px-6">
+              <p class="text-sm uppercase tracking-widest text-slate-500">Stack</p>
+              <p class="mt-2 text-xl font-bold">Node.js · TypeScript · React · MySQL · PostgreSQL · Docker · Nginx</p>
+              <p class="mt-3 text-slate-500 dark:text-slate-400">+ WebSockets · Redis · CI/CD · Linux</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Skills -->
+  <section class="py-14 border-t border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-10">
+      <div class="md:col-span-1 reveal">
+        <h2 class="text-2xl font-bold">Sobre mí</h2>
+        <p class="mt-3 text-slate-600 dark:text-slate-300">Ingeniero de software backend‑first. Me mueven las métricas: latencia baja, throughput alto y cero incidentes P1. Documentación clara y código mantenible.</p>
+        <ul class="mt-4 space-y-2 text-sm list-disc list-inside text-slate-600 dark:text-slate-300">
+          <li>+1000 registros validados y cargados sin pérdidas</li>
+          <li>‑55% tamaño promedio de imágenes con Sharp</li>
+          <li>Despliegues con PM2 + Nginx + HTTPS</li>
+        </ul>
+      </div>
+      <div class="md:col-span-2 reveal">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="d rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+            <h3 class="font-semibold">Backend</h3>
+            <p class="mt-2 text-sm text-slate-500">Node, Express/Nest, TS, REST/GraphQL, Auth, Prisma/TypeORM, SQL</p>
+          </div>
+          <div class="d rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+            <h3 class="font-semibold">Frontend</h3>
+            <p class="mt-2 text-sm text-slate-500">HTML, JS, React (opcional), HTMX, Tailwind, Forms</p>
+          </div>
+          <div class="d rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+            <h3 class="font-semibold">Infra & DevOps</h3>
+            <p class="mt-2 text-sm text-slate-500">Linux, Nginx, Docker, PM2, CI/CD, Cloudflare</p>
+          </div>
+          <div class="d rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+            <h3 class="font-semibold">Datos</h3>
+            <p class="mt-2 text-sm text-slate-500">PostgreSQL, MySQL, indexado, caching, Redis</p>
+          </div>
+          <div class="d rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+            <h3 class="font-semibold">Testing</h3>
+            <p class="mt-2 text-sm text-slate-500">Jest/Vitest, Playwright, cobertura base</p>
+          </div>
+          <div class="d rounded-2xl border border-slate-200 dark:border-slate-800 p-5">
+            <h3 class="font-semibold">Accesibilidad</h3>
+            <p class="mt-2 text-sm text-slate-500">Semántica, contraste AA, teclado, alt/aria</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-16 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="reveal flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-bold">Proyectos destacados</h2>
+          <p class="text-slate-600 dark:text-slate-300">Problema → Solución → Impacto con métricas.</p>
+        </div>
+        <a href="#" class="text-sm hover:text-sky-600">Ver todos</a>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <!-- Card 1 -->
+        <article class="reveal d rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white dark:bg-slate-950">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">Optimizador de imágenes (Sharp)</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-sky-100 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">Node/Express</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Servicio que reduce hasta 70% el peso manteniendo calidad. Dockerizado y con endpoint seguro.</p>
+          <ul class="mt-3 text-sm text-slate-600 dark:text-slate-400 list-disc list-inside space-y-1">
+            <li>‑55% tamaño promedio · +28% LCP</li>
+            <li>Rate limit y logs con rotación</li>
+          </ul>
+          <div class="mt-4 flex gap-3 text-sm">
+            <a class="text-sky-600 hover:underline" href="#" target="_blank">Demo</a>
+            <a class="text-sky-600 hover:underline" href="#" target="_blank">Repositorio</a>
+            <button class="ml-auto inline-flex items-center gap-1 text-slate-500 hover:text-sky-600" data-open="modal-sharp">Detalles
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20v-8m0 0V4m0 8H4m8 0h8"/></svg>
+            </button>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="reveal d rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white dark:bg-slate-950">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-semibold">Consolidador Excel → DB</h3>
+            <span class="text-xs px-2 py-1 rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">TypeScript/MySQL</span>
+          </div>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Carga y validación de 1000+ registros con normalización y reporting de errores.</p>
+          <ul class="mt-3 text-sm text-slate-600 dark:text-slate-400 list-disc list-inside space-y-1">
+            <li>100% registros íntegros</li>
+            <li>‑90% errores manuales</li>
+          </ul>
+          <div class="mt-4 flex gap-3 text-sm">
+            <a class="text-sky-600 hover:underline" href="#" target="_blank">Repositorio</a>
+            <button class="ml-auto inline-flex items-center gap-1 text-slate-500 hover:text-sky-600" data-open="modal-excel">Detalles
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 20v-8m0 0V4m0 8H4m8 0h8"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios -->
+  <section id="servicios" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="reveal">
+        <h2 class="text-2xl font-bold">Servicios</h2>
+        <p class="text-slate-600 dark:text-slate-300">Packs simples para arrancar rápido.</p>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <div class="reveal d rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">API Starter</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">REST con Auth, validación y logs.</p>
+          <p class="mt-4 text-2xl font-extrabold">Desde $500</p>
+        </div>
+        <div class="reveal d rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Optimización</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Performance, caching y profiling.</p>
+          <p class="mt-4 text-2xl font-extrabold">Desde $400</p>
+        </div>
+        <div class="reveal d rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+          <h3 class="font-semibold">Deploy & Nginx</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">PM2, HTTPS y pipelines.</p>
+          <p class="mt-4 text-2xl font-extrabold">Desde $350</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog / Notas -->
+  <section id="blog" class="py-16 bg-slate-50 dark:bg-slate-900/30 border-y border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="reveal flex items-end justify-between">
+        <div>
+          <h2 class="text-2xl font-bold">Notas técnicas</h2>
+          <p class="text-slate-600 dark:text-slate-300">Guías cortas y aplicadas.</p>
+        </div>
+        <a href="#" class="text-sm hover:text-sky-600">RSS</a>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6">
+        <article class="reveal d rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white dark:bg-slate-950">
+          <h3 class="font-semibold">Rate limiting en Express</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Cómo evitar abuso de endpoints con middleware simple.</p>
+          <a class="mt-3 inline-block text-sky-600 hover:underline text-sm" href="#">Leer más</a>
+        </article>
+        <article class="reveal d rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white dark:bg-slate-950">
+          <h3 class="font-semibold">Nginx reverse proxy + HTTPS</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Server blocks y certificados con Certbot.</p>
+          <a class="mt-3 inline-block text-sky-600 hover:underline text-sm" href="#">Leer más</a>
+        </article>
+        <article class="reveal d rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-white dark:bg-slate-950">
+          <h3 class="font-semibold">Normalizar datos de Excel</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Estrategias para evitar pérdidas al cargar 1000+ filas.</p>
+          <a class="mt-3 inline-block text-sky-600 hover:underline text-sm" href="#">Leer más</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="py-16">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="reveal text-center">
+        <h2 class="text-2xl font-bold">Hablemos</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">¿Necesitas optimizar tu API o desplegar con Nginx/CI? Escríbeme.</p>
+      </div>
+      <form class="reveal mt-8 grid gap-4" id="contactForm">
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm" for="name">Nombre</label>
+            <input id="name" name="name" required minlength="2" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900/50 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-500" />
+          </div>
+          <div>
+            <label class="text-sm" for="email">Email</label>
+            <input id="email" name="email" type="email" required class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900/50 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-500" />
+          </div>
+        </div>
+        <div>
+          <label class="text-sm" for="message">Mensaje</label>
+          <textarea id="message" name="message" rows="5" required minlength="30" class="mt-1 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white/70 dark:bg-slate-900/50 px-3 py-2 outline-none focus:ring-2 focus:ring-sky-500"></textarea>
+        </div>
+        <div class="flex items-center gap-3">
+          <input id="privacy" type="checkbox" required class="h-4 w-4 rounded border-slate-300 dark:border-slate-700" />
+          <label for="privacy" class="text-sm">Acepto la política de privacidad</label>
+        </div>
+        <div class="flex items-center gap-3">
+          <button class="d inline-flex items-center gap-2 rounded-2xl bg-sky-600 text-white px-5 py-3 font-semibold" type="submit">Enviar</button>
+          <p id="formMsg" class="text-sm text-slate-500"></p>
+        </div>
+        <p class="text-xs text-slate-500">* Esta demo usa <code>fetch</code> a un endpoint placeholder. Cambia la URL a tu API o a Formspree.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-200/60 dark:border-slate-800/60">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+      <p>© <span id="year"></span> Carlos Márquez · Hecho con HTML + Tailwind 3</p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="hover:text-sky-600">Privacidad</a>
+        <a href="#" class="hover:text-sky-600">Términos</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modales simples -->
+  <dialog id="modal-sharp" class="rounded-2xl p-0 w-full max-w-2xl bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <div class="p-6">
+      <h4 class="text-lg font-bold">Optimizador de imágenes — Detalles</h4>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Arquitectura: Express + Sharp + Docker. Endpoints protegidos con clave de API vía header, logs con rotación y verificación de tipo MIME.</p>
+      <button data-close class="mt-4 inline-flex rounded-xl border px-4 py-2">Cerrar</button>
+    </div>
+  </dialog>
+  <dialog id="modal-excel" class="rounded-2xl p-0 w-full max-w-2xl bg-white dark:bg-slate-950 text-slate-800 dark:text-slate-100">
+    <div class="p-6">
+      <h4 class="text-lg font-bold">Consolidador Excel — Detalles</h4>
+      <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Normalización de encabezados, validación con reglas, manejo de transacciones y reporte de errores descargable.</p>
+      <button data-close class="mt-4 inline-flex rounded-xl border px-4 py-2">Cerrar</button>
+    </div>
+  </dialog>
+
+  <script src="assets/js/main.js"></script>
+  </body>
+</html>
